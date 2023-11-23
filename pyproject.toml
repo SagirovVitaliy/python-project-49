@@ -11,6 +11,7 @@ packages = [
 [tool.poetry.dependencies]
 python = "^3.12"
 prompt = "^0.4.1"
+asciinema = "^2.4.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -23,3 +24,4 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.scripts]
 brain-games = "brain_games.scripts.brain_games:main"
+brain-even = "brain_games.scripts.brain_even:main"
