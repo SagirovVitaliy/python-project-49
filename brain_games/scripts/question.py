@@ -1,46 +1,52 @@
 import prompt
+from typing import Callable
 
 
-class Game:
-    def start_game(self, greeting: str) -> None:
-        print("Welcome to the Brain Games!")
-        name = prompt.string('May I have your name? ')
-        print(f"Hello, {name}!")
-        print(greeting)
+def start_game(
+    greeting: str,
+    qustion_value: Callable[..., tuple[str, str]]
+) -> None:
+    print("Welcome to the Brain Games!")
+    name = prompt.string('May I have your name? ')
+    print(f"Hello, {name}!")
+    print(greeting)
 
-        self._check_answer(name)
+    _check_answer(name, qustion_value)
 
-    def _check_answer(self, name: str) -> None:
-        count_right_answer = 0
 
-        while count_right_answer < 3:
-            if not self._get_question(name):
-                return
+def _check_answer(
+    name: str,
+    qustion_value: Callable[..., tuple[str, str]]
+) -> None:
+    count_right_answer = 0
 
-            print("Correct!")
-            count_right_answer += 1
+    while count_right_answer < 3:
+        if not _get_question(name, qustion_value):
+            return
 
-        print(f"Congratulations, {name}!")
+        print("Correct!")
+        count_right_answer += 1
 
-    def _get_question(self, name: str) -> bool:
-        value = self.get_qustion_value()
+    print(f"Congratulations, {name}!")
 
-        print(f"Question: {value[0]}")
 
-        gamer_answer = prompt.string('Your answer: ')
+def _get_question(
+    name: str,
+    qustion_value: Callable[..., tuple[str, str]]
+) -> bool:
+    value = qustion_value()
 
-        if value[1] == gamer_answer:
-            return True
+    print(f"Question: {value[0]}")
 
-        self._game_over(name, gamer_answer, value)
-        return False
+    gamer_answer = prompt.string('Your answer: ')
 
-    def _game_over(
-            self, name: str, gamer_answer: str, value: tuple[str, str]
-    ) -> None:
-        print(f"'{gamer_answer}' is wrong answer ;(. Correct answer was '{value[1]}'.") # noqa
-        print(f"Let's try again, {name}!")
+    if value[1] == gamer_answer:
+        return True
 
-    def get_qustion_value(self) -> tuple[str, str]:
-        "Должна быть переопределена"
-        raise NotImplementedError
+    _game_over(name, gamer_answer, value)
+    return False
+
+
+def _game_over(name: str, gamer_answer: str, value: tuple[str, str]) -> None:
+    print(f"'{gamer_answer}' is wrong answer ;(. Correct answer was '{value[1]}'.") # noqa
+    print(f"Let's try again, {name}!")

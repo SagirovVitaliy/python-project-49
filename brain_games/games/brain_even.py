@@ -1,20 +1,21 @@
 #!/usr/bin/env
 from random import randint
-from brain_games.scripts.question import Game
 
-
-class BrainEven(Game):
-    def get_qustion_value(self) -> tuple[str, str]:
-        number = randint(0, 100)
-        if number % 2 == 0:
-            return str(number), "yes"
-        return str(number), "no"
+from brain_games.scripts.question import start_game
 
 
 def main():
-    BrainEven().start_game(
-        'Answer "yes" if the number is even, otherwise answer "no".'
+    start_game(
+        'Answer "yes" if the number is even, otherwise answer "no".',
+        _get_qustion_value
     )
+
+
+def _get_qustion_value() -> tuple[str, str]:
+    number = randint(0, 100)
+    if number % 2 == 0:
+        return str(number), "yes"
+    return str(number), "no"
 
 
 if __name__ == '__main__':
