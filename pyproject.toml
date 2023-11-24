@@ -10,7 +10,7 @@ packages = [
 repository = "https://github.com/SagirovVitaliy/python-project-49"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.8"
 prompt = "^0.4.1"
 asciinema = "^2.4.0"
 
