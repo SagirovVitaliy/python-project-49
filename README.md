@@ -6,7 +6,10 @@ https://asciinema.org/a/hBzz5SNzPYuauZMLTO65zJDG3
 https://asciinema.org/a/5ENPhad8zOpikeM80HMdXjYNc
 
 Игра brain-gcd
- https://asciinema.org/a/au492bxcWQ8uNnRAgw2oQmkGX
+https://asciinema.org/a/au492bxcWQ8uNnRAgw2oQmkGX
+
+Игра brain-progression
+https://asciinema.org/a/8PzoGeW2zsooyZhv8WV4OQ0xP
 
 [![Actions Status](https://github.com/SagirovVitaliy/python-project-49/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/SagirovVitaliy/python-project-49/actions)
 
