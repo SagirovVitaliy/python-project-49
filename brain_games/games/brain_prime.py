@@ -6,7 +6,7 @@ from brain_games.scripts.question import start_game
 
 def main():
     start_game(
-        'Answer "yes" if the number is even, otherwise answer "no".',
+        'Answer "yes" if given number is prime. Otherwise answer "no".',
         _get_qustion_value
     )
 
