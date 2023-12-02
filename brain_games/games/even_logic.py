@@ -1,7 +1,7 @@
 #!/usr/bin/env
 from random import randint
 
-from brain_games.scripts.question import start_game
+from brain_games.games.games_logic import start_game
 
 
 def main():
@@ -16,7 +16,3 @@ def _get_qustion_value() -> tuple[str, str]:
     if number % 2 == 0:
         return str(number), "yes"
     return str(number), "no"
-
-
-if __name__ == '__main__':
-    main()

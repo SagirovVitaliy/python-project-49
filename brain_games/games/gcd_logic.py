@@ -2,7 +2,7 @@
 from random import randint
 from math import gcd
 
-from brain_games.scripts.question import start_game
+from brain_games.games.games_logic import start_game
 
 
 def main():
@@ -18,7 +18,3 @@ def _get_qustion_value() -> tuple[str, str]:
     result = f"{first_number} {second_number}"
 
     return result, str(gcd(first_number, second_number))
-
-
-if __name__ == '__main__':
-    main()
